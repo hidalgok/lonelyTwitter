@@ -11,7 +11,7 @@ public abstract class Tweet {
 
     private String message;
     private Date date;
-    private ArrayList<Mood> moodList;
+    //private ArrayList<Mood> moodList;
 
     public Tweet(String message) {
         this.message = message;
@@ -45,16 +45,21 @@ public abstract class Tweet {
 
     public abstract Boolean isImportant();
 
-    public void addMood(Mood newmood){
-        moodList.add(newmood);
+    @Override
+    public String toString(){
+        return date.toString() + " | " + message;
     }
 
-    public void removeMood(Mood oldmood){
-        moodList.remove(oldmood);
-    }
-
-    public String checkMood(int i){
-       return moodList.get(i).currMood();
-    }
+//    public void addMood(Mood newmood){
+//        moodList.add(newmood);
+//    }
+//
+//    public void removeMood(Mood oldmood){
+//        moodList.remove(oldmood);
+//    }
+//
+//    public String checkMood(int i){
+//       return moodList.get(i).currMood();
+//    }
 
 }
