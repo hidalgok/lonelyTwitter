@@ -65,7 +65,14 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				tweetList.clear();
-				deleteFile(FILENAME);  // TODO deprecate this button
+				String text = bodyText.getText().toString();
+				ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
+				getTweetsTask.execute(text);
+				try{
+					tweetList = getTweetsTask.get();
+				} catch (Exception e) {
+					Log.i("Error", "Failed to get the tweets from the async object");
+				}
 				adapter.notifyDataSetChanged();
 			}
 		});
