@@ -1,0 +1,27 @@
+package ca.ualberta.cs.lonelytwitter;
+
+import java.util.ArrayList;
+
+/**
+ * Created by khidalgo on 10/10/17.
+ */
+
+public class TweetList {
+    private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+
+    //add tweet to a list of tweets
+    public void addTweet(Tweet tweet){
+
+    }
+
+    //delete tweet from a list of tweets
+    public void deleteTweet(Tweet tweet){
+
+    }
+
+    //check if a list of tweets has the specified tweet
+    //if it does return true, otherwise false
+    public boolean hasTweet(Tweet tweet){
+        return Boolean.FALSE;
+    }
+}
