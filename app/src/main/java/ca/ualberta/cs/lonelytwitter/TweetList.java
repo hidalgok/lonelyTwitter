@@ -11,17 +11,21 @@ public class TweetList {
 
     //add tweet to a list of tweets
     public void addTweet(Tweet tweet){
-
+        tweets.add(tweet);
     }
 
     //delete tweet from a list of tweets
     public void deleteTweet(Tweet tweet){
-
+        tweets.remove(tweet);
     }
 
     //check if a list of tweets has the specified tweet
     //if it does return true, otherwise false
     public boolean hasTweet(Tweet tweet){
-        return Boolean.FALSE;
+        return tweets.contains(tweet);
+    }
+
+    public Tweet getTweet(int i){
+        return tweets.get(i);
     }
 }

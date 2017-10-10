@@ -12,16 +12,50 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
     }
 
     public void testAddTweet(){
-        assertTrue(Boolean.FALSE);
+        TweetList tweets = new TweetList();
+
+        Tweet myTweet = new NormalTweet("my tweet");
+
+        tweets.addTweet(myTweet);
+
+        assertTrue(tweets.hasTweet(myTweet));
     }
 
     public void testDeleteTweet(){
-        assertTrue(Boolean.FALSE);
+        TweetList tweets = new TweetList();
+
+        Tweet myTweet = new NormalTweet("my tweet");
+
+        tweets.addTweet(myTweet);
+
+        tweets.deleteTweet(myTweet);
+
+        assertFalse(tweets.hasTweet(myTweet));
+
     }
 
     public void testHasTweet(){
-        assertTrue("testHasTweet has failed", Boolean.FALSE);
+        TweetList tweets = new TweetList();
+
+        Tweet myTweet = new NormalTweet("my tweet");
+
+        assertFalse(tweets.hasTweet(myTweet));
+
+        tweets.addTweet(myTweet);
+
+        assertTrue(tweets.hasTweet(myTweet));
     }
 
+    public void testGetTweet(){
+        TweetList tweets = new TweetList();
 
+        Tweet myTweet = new NormalTweet("my tweet");
+
+        tweets.addTweet(myTweet);
+
+        Tweet gotTweet = tweets.getTweet(0);
+
+        assertEquals(myTweet.getMessage(),gotTweet.getMessage());
+        assertEquals(myTweet.getDate(), gotTweet.getDate());
+    }
 }
