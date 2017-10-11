@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by khidalgo on 9/12/17.
  */
 
-public abstract class Tweet {
+public abstract class Tweet implements Comparable<Tweet>{
 
     private String message;
     private Date date;
@@ -48,6 +48,12 @@ public abstract class Tweet {
     @Override
     public String toString(){
         return date.toString() + " | " + message;
+    }
+
+    //taken and modified from https://stackoverflow.com/questions/5927109/sort-objects-in-arraylist-by-date
+    //2017-10-10
+    public int compareTo(Tweet t){
+        return getDate().compareTo(getDate());
     }
 
 //    public void addMood(Mood newmood){
