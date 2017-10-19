@@ -2,7 +2,6 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -21,10 +20,10 @@ public class EditTweetActivity extends Activity {
         Date tweet_date = new Date();
         tweet_date.setTime(extras.getLong("TWEET_DATE"));
 
-        //TextView tweetfield = (TextView) findViewById(R.id.tweet_mess);
-        //TextView datefield = (TextView) findViewById(R.id.tweet_date);
+        TextView tweetfield = (TextView) findViewById(R.id.tweet_mess);
+        TextView datefield = (TextView) findViewById(R.id.tweet_date);
 
-        //tweetfield.setText(tweet_message);
-        //datefield.setText("Created on: " + tweet_date.toString());
+        tweetfield.setText(tweet_message);
+        datefield.setText("Created on: " + tweet_date.toString());
     }
 }
